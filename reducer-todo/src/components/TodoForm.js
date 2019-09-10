@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-const TodoForm = ({addTodos, clearCompleted}) => {
+const TodoForm = ({addTodo, clearCompleted}) => {
     const [item, setItem] = useState('');
 
     const handleSubmit = e => {
         e.preventDefault();
-        addTodos(item);
+        addTodo(item);
         setItem('');
     };
 

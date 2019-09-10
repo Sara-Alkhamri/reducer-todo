@@ -1,5 +1,5 @@
 export const initialState = {
-    todo: [
+    todos: [
         {
             item: 'Learn Reducers',
             completed: false,
@@ -15,8 +15,26 @@ export const initialState = {
 };
 
 export function todoReducer(state, action) {
-    return {
+    switch (action.type) {
+    case 'TOGGLE_TODO':
+        return {
+            ...state,
+            todos: state.todos.map(todos => (
+                todos.id === action.payload ? {...todos, completed: !todos.completed} : todos
+            ))
+        };
+        case 'ADD_TODO':
+        return {
+            ...state,
+            todos: state.todos.concat({ item: action.payload, completed: false, id: Date.now() })
+        };
+        case "CLEAR_COMPLETED":
+        return {
         ...state,
-        
+        todos: state.todos.filter(({completed}) => !completed)
+        };
+        default:
+        return state;
     }
+   
 }
