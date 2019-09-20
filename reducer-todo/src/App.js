@@ -12,7 +12,7 @@ function App() {
   const clearCompleted = () => dispatch({type: 'CLEAR_COMPLETED'});
   return (
     <div className="App">
-      <h2>Todos-reducer</h2>
+      <h2>Todo List-Reducer</h2>
       <TodoForm addTodo={addTodo} clearCompleted={clearCompleted} />
       <TodoList todos={state.todos} toggle={toggle} />
     </div>

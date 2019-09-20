@@ -39,6 +39,7 @@ span {
 }
 h2 {
   text-align: center;
+  margin-right: 330px;
 }
 
 .todo-list{
@@ -79,7 +80,7 @@ form > input {
 
 button {
   background-color: white;
-  border: 1px solid #5882a7;
+  border: 1px solid #aeb8c0;
   color: #2d2d37;
   font-size: 16px;
   padding: 6px 14px;
